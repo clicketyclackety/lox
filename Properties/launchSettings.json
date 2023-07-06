@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "lox": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\sykes\\cloned_gits\\lox\\test.lx",
+      "workingDirectory": "C:\\Users\\sykes\\cloned_gits\\lox"
+    }
+  }
+}
