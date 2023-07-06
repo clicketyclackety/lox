@@ -1,6 +1,6 @@
-﻿internal sealed class GenerateAst
+﻿public class GenerateAst
 {
-    public static void main(string[] args)
+    static void Main(params string[] args)
     {
         if (args.Length != 1)
             throw new IOException("No");
