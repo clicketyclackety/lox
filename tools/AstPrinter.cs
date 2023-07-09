@@ -5,6 +5,9 @@ namespace lox.tools
 
 	public sealed class AstPrinter : Visitor<string>
 	{
+		public string print(Expr expr)
+			=> expr.accept(this);
+
 		public string visitBinaryExpr(Binary expr)
 			=> parenthize(expr.op.lexeme, expr.left, expr.right);
 

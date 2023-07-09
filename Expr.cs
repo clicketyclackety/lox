@@ -1,8 +1,8 @@
-public interface Expr<T>
+public interface Expr
 {
-    public T accept(Visitor<T> visitor);
+    public V accept<V>(IVisitor<V> visitor);
 }
-public interface Visitor<T>
+public interface IVisitor<T>
 {
     public T visitBinaryExpr(Binary expr);
     public T visitGroupingExpr(Grouping expr);
@@ -10,43 +10,43 @@ public interface Visitor<T>
     public T visitUnaryExpr(Unary expr);
 }
 
-public class Binary : Expr<Binary>
+public class Binary : Expr
 {
-    internal readonly Expr<Binary> left;
+    internal readonly Expr left;
     internal readonly Token op;
-    internal readonly Expr<Binary> right;
+    internal readonly Expr right;
 
-    public Binary(Expr<Binary> left, Token op, Expr<Binary> right)
+    public Binary(Expr left, Token op, Expr right)
     {
         this.left = left;
         this.op = op;
         this.right = right;
     }
 
-    public Binary accept(Visitor<Binary> visitor)
+    public Binary accept<Binary>(IVisitor<Binary> visitor)
     {
         return visitor.visitBinaryExpr(this);
     }
 
 }
 
-public class Grouping : Expr<Grouping>
+public class Grouping : Expr
 {
-    internal readonly Expr<Grouping> expression;
+    internal readonly Expr expression;
 
-    public Grouping(Expr<Grouping> expression)
+    public Grouping(Expr expression)
     {
         this.expression = expression;
     }
 
-    public Grouping accept(Visitor<Grouping> visitor)
+    public Grouping accept<Grouping>(IVisitor<Grouping> visitor)
     {
         return visitor.visitGroupingExpr(this);
     }
 
 }
 
-public class Literal : Expr<Literal>
+public class Literal : Expr
 {
     internal readonly object value;
 
@@ -55,25 +55,25 @@ public class Literal : Expr<Literal>
         this.value = value;
     }
 
-    public Literal accept(Visitor<Literal> visitor)
+    public Literal accept<Literal>(IVisitor<Literal> visitor)
     {
         return visitor.visitLiteralExpr(this);
     }
 
 }
 
-public class Unary : Expr<Unary>
+public class Unary : Expr
 {
     internal readonly Token op;
-    internal readonly Expr<Unary> right;
+    internal readonly Expr right;
 
-    public Unary(Token op, Expr<Unary> right)
+    public Unary(Token op, Expr right)
     {
         this.op = op;
         this.right = right;
     }
 
-    public Unary accept(Visitor<Unary> visitor)
+    public Unary accept<Unary>(IVisitor<Unary> visitor)
     {
         return visitor.visitUnaryExpr(this);
     }
