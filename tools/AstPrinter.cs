@@ -3,7 +3,7 @@
 namespace lox.tools
 {
 
-	public sealed class AstPrinter : Visitor<string>
+	public sealed class AstPrinter : IVisitor<string>
 	{
 		public string print(Expr expr)
 			=> expr.accept(this);
@@ -23,11 +23,11 @@ namespace lox.tools
 		public string visitUnaryExpr(Unary expr)
 			=> parenthize(expr.op.lexeme, expr.right);
 
-		private string parenthize(string name, IEnumerable<Expr<string>> exprs)
+		private string parenthize(string name, IEnumerable<Expr> exprs)
 		{
 			StringBuilder builder = new();
 			builder.Append('(').Append(name);
-			foreach (Expr<string> expr in exprs)
+			foreach (Expr expr in exprs)
 			{
 				builder.Append(' ');
 				builder.Append(expr.accept(this));

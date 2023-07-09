@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="tools\GenerateAst\**" />
+    <EmbeddedResource Remove="tools\GenerateAst\**" />
+    <None Remove="tools\GenerateAst\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
       <_Parameter1>lox_tests</_Parameter1>
     </AssemblyAttribute>

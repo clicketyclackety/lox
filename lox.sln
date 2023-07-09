@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lox", "lox.csproj", "{CD045881-C0A0-4963-A116-290C03F0B8D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lox", "src\lox.csproj", "{CD045881-C0A0-4963-A116-290C03F0B8D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4D54AF12-F238-44FA-90A3-90450191285F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4D54AF12-F238-44FA-90A3-90450191285F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lox_tests", "tests\lox_tests\lox_tests.csproj", "{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lox_tests", "tests\lox_tests\lox_tests.csproj", "{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{8C2EAA57-C964-419A-94B0-E2D4A5D03E5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenerateAst", "tools\GenerateAst\GenerateAst.csproj", "{46938470-6D17-4075-ADA5-5FF1BF60DCD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,17 @@ Global
 		{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46938470-6D17-4075-ADA5-5FF1BF60DCD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46938470-6D17-4075-ADA5-5FF1BF60DCD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46938470-6D17-4075-ADA5-5FF1BF60DCD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46938470-6D17-4075-ADA5-5FF1BF60DCD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{56502A1F-DE2A-4CF5-AE23-D7D8A0DD2AB9} = {4D54AF12-F238-44FA-90A3-90450191285F}
+		{46938470-6D17-4075-ADA5-5FF1BF60DCD9} = {8C2EAA57-C964-419A-94B0-E2D4A5D03E5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E939B408-E4B5-40DD-93F4-68FDE9ED884E}
