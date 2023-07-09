@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace lox.tools
+namespace lox
 {
 
 	public sealed class AstPrinter : IVisitor<string>
@@ -23,7 +23,7 @@ namespace lox.tools
 		public string visitUnaryExpr(Unary expr)
 			=> parenthize(expr.op.lexeme, expr.right);
 
-		private string parenthize(string name, IEnumerable<Expr> exprs)
+		private string parenthize(string name, params Expr[] exprs)
 		{
 			StringBuilder builder = new();
 			builder.Append('(').Append(name);

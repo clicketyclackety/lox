@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lox.csproj" />
+    <ProjectReference Include="..\..\src\lox.csproj" />
     <ProjectReference Include="..\..\tools\GenerateAst\GenerateAst.csproj" />
   </ItemGroup>
 
