@@ -10,7 +10,7 @@ namespace lox_tests
 		{
 			string result = new AstPrinter().print(expression);
 
-			Assert.Equals(expected, result);
+			Assert.That(expected, Is.EqualTo(result));
 		}
 
 		public static IEnumerable TestData
